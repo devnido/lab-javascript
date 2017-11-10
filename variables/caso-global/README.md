@@ -1,0 +1,1 @@
+depende del orden en que se adjunte el archivo js en el script de html, ya que la variable x con el mismo nombre en ambos casos de sobreescribe
