@@ -27,7 +27,7 @@ console.log('dateTwoParsedToLocale', dateTwoParsedToLocale);
 // restar dos fechas
 console.log('---------------------------------------------------');
 console.log('-----------------restar dos fechas-----------------');
-console.log('---------------------------------------------------');
+console.log('---------------------como UTC----------------------');
 
 const dateToSubOne = new Date(2020, 1, 28, 20, 06, 10);
 const dateToSubTwo = new Date(Date.now());
@@ -35,12 +35,33 @@ const dateToSubTwo = new Date(Date.now());
 console.log('dateToSubOne', dateToSubOne);
 console.log('dateToSubTwo', dateToSubTwo);
 
-const dateDiffTimestamp = dateToSubTwo - dateToSubOne
-const dateDiffParsed = new Date(dateDiffTimestamp)
+const dateDiff = dateToSubTwo - dateToSubOne
+const dateDiffParsed = new Date(dateDiff)
 
-console.log(dateDiffTimestamp);
+console.log(dateDiff);
 console.log(dateDiffParsed);
 
 const minutes = dateDiffParsed.getMinutes();
 
 console.log(minutes);
+
+console.log('---------------------------------------------------');
+console.log('-----------------restar dos fechas-----------------');
+console.log('-------------------como timestamp------------------');
+
+const dateToSubOneTimestamp = new Date(2020, 1, 28, 20, 46, 10).getTime();
+const dateToSubTwoTimestamp = Date.now();
+
+console.log('dateToSubOne', dateToSubOneTimestamp);
+console.log('dateToSubTwo', dateToSubTwoTimestamp);
+
+const dateDiffTimestamp = dateToSubTwoTimestamp - dateToSubOneTimestamp
+
+console.log(dateDiffTimestamp);
+
+const minutes2 = new Date(dateDiffTimestamp).getMinutes();
+const seconds = new Date(dateDiffTimestamp).getSeconds();
+
+console.log(minutes2);
+console.log('seconds', dateDiffTimestamp / 1000);
+console.log('rounded seconds', Math.round(dateDiffTimestamp / 1000));
