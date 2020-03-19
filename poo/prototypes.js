@@ -1,6 +1,6 @@
-var miObjeto = function () {
+var miObjeto = function() {
     this.propiedad = "uno"
-    this.get = function () {
+    this.get = function() {
         console.log(this.propiedad)
     }
 }
@@ -12,12 +12,12 @@ instancia;
 instancia.get();
 
 //lo mismo de arriba pero usando prototype 
-var otroObjeto = function () {
+var otroObjeto = function() {
     this.propiedad = "uno";
 }
 
 //creamos la funcion en el prototype
-otroObjeto.prototype.get = function () {
+otroObjeto.prototype.get = function() {
     console.log(this.propiedad);
 }
 
@@ -26,25 +26,27 @@ otraInstancia = new otroObjeto();
 //tambien se le puede entregar un objeto
 
 otroObjeto.prototype = {
-    hola: function () {
+    hola: function() {
         console.log('hola' + this.propiedad);
     }
 }
 
+otroObjeto.get()
+
 //simulando herencia con prototype una clase objeto
 
 //se define la clase vehiculo
-var vehiculo = function (ruedas) {
+var vehiculo = function(ruedas) {
     this.ruedas = ruedas;
-    this.getRuedas = function () {
+    this.getRuedas = function() {
         console.log(this.ruedas);
     }
 }
 
 //se define la clase coche
-var coche = function (modelo) {
+var coche = function(modelo) {
     this.modelo = modelo;
-    this.getModelo = function () {
+    this.getModelo = function() {
         console.log(this.modelo);
     }
 }
